@@ -1,0 +1,55 @@
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a [routerLink]="['/Immobilier']">Accueil</a></li>
+    <li><a [routerLink]="['/Immobilier']">{{Immobilier.titre}}</a></li>
+    <li>{{Immobilier.categorie}}</li>
+  </ol>
+</div>
+<div class="col-md-12 col-md-12">
+  <div class="panel" style="padding: 30px 30px 30px 30px;">
+    <div class="media">
+      <div class="media-left">
+        <a href="#">
+          <img src="{{Immobilier.imagePath}}" alt="" class="img-rounded" width="500" height="350">
+        </a>
+      </div>
+
+
+      <div class="media-body" style="padding: 30px 30px 30px 30px;"><a [routerLink]="['/Immobilier']"
+                                                                       class="btn btn-link"> <i
+        class="fa fa-angle-left" style="margin-right:15px;"></i>Retour</a>
+        <div class="page-header"><h1> {{Immobilier.titre}} </h1>
+          <small>{{Immobilier.categorie}}</small>
+        </div>
+        <div>
+          <ul class="nav nav-tabs">
+            <li class="active" href="#Description" data-toggle="tab"><a href="#Description">Description</a>
+            </li>
+            <li><a href="#Carac" data-toggle="tab">Contacter l'annonceur</a></li>
+          </ul>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="Description" style="padding: 20px 30px 30px 5px;">
+              <p>{{Immobilier.description}}</p>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="Carac" style="padding: 20px 30px 30px 5px;">
+              <p>{{Immobilier.description}}</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="pull-left"><span class="text-danger" style="font-weight:bold;font-size:18px;">Prix : </span>
+            <span class="text-danger text-center" style="font-size:35px;">{{Immobilier.price}} TND</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script>
+    /*$('.nav-tabs li:eq(1) a').tab('show');
+     $('.nav-tabs li:eq(2) a').tab('show');*/
+    $('.nav-tabs a').click(function (e) {
+      e.preventDefault();
+      $(this).tab('show');
+    });
+  </script>
+</div>

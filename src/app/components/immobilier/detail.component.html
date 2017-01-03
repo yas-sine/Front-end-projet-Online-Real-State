@@ -1,0 +1,24 @@
+<div class="row" *ngIf="selectedImmobilier != null">
+  <div class="col-xs-12">
+    <img src="{{selectedImmobilier?.imagePath}}" alt="" class="img-rounded" width="550" height="350">
+    <p class="text-left small"> <span class="glyphicon glyphicon-time"> </span> {{selectedImmobilier?.datedepos}}</p>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>{{selectedImmobilier?.categorie}}</h1>
+    </div>
+    <div class="col-xs-12">
+      <button class="btn btn-info" [routerLink]="['/PlusDetail',selectedImmobilier.Id]">Plus de detail</button>
+    </div>
+  </div>
+
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <h4 class="list-group-item-heading">{{selectedImmobilier?.titre}}</h4>
+      <p class="list-group-item-text">{{selectedImmobilier?.description}}</p>
+      <p class="list-group-item-text">{{selectedImmobilier?.price}}</p>
+      <p class="list-group-item-text">{{selectedImmobilier?.datedepos}}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row">
+    <h3 class="col-lg-12 text-center"><span> <i class="fa fa-user"></i></span>
+      Créer un nouveau compte </h3>
+  </div>
+  <div class="dt-sc-margin20"></div>
+</div>
+<form name="form" style="margin-top:40px;" [formGroup]="form" novalidate (ngSubmit)="save(form.value, form.valid)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <div class="form-group col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-1" [ngClass]="{'has-error': !form.controls.prenom.valid, 'has-success': form.controls.prenom.valid}">
+          <label class="control-label" for="prenom">Prénom</label> <input type="text" class="form-control" id="prenom" name="prenom" formControlName="prenom">
+          <div *ngIf="form.controls.prenom.invalid"><span class="text-danger" *ngIf="form.controls.prenom.errors.minlength && form.controls.prenom.touched"> Le prénom doit être au minumum 2 caractéres </span>
+            <span class="text-danger" *ngIf="form.controls.prenom.errors.required && form.controls.prenom.touched"> Le prénom est obligatoire </span>
+          </div>
+        </div>
+        <div class="form-group col-lg-5 col-md-5 col-sm-6 col-xs-12" [ngClass]="{'has-error': !form.controls.nom.valid, 'has-success': form.controls.nom.valid}">
+          <label class="control-label" for="nom">Nom</label> <input type="text" class="form-control" id="nom" name="nom" formControlName="nom">
+          <div *ngIf="form.controls.nom.invalid"><span class="text-danger" *ngIf="form.controls.Nom.errors.minlength && form.controls.Nom.touched"> Le Nom doit être au minumum 2 caractéres </span>
+            <span class="text-danger" *ngIf="form.controls.Nom.errors.required && form.controls.Nom.touched"> Le Nom est obligatoire </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-12">
+        <div class="form-group col-lg-10 col-md-10 col-lg-offset-1" [ngClass]="{'has-error': !form.controls.email.valid, 'has-success': form.controls.email.valid}">
+          <label class="control-label" for="email">Adresse e-mail</label>
+          <input type="text" class="form-control" id="email" name="email" formControlName="email">
+          <div *ngIf="form.controls.email.invalid">
+            <span class="text-danger" *ngIf="form.controls.email.errors.pattern && form.controls.email.touched"> L'email doit être sous la forme xxxx@xxxx.xx </span>
+            <span class="text-danger" *ngIf="form.controls.email.errors.required && form.controls.email.touched"> L'email est obligatoire </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-12">
+        <div class="form-group col-lg-10 col-md-10 col-lg-offset-1" [ngClass]="{'has-error': !form.controls.password.valid, 'has-success': form.controls.password.valid}">
+          <label class="control-label" for="password">Password</label>
+          <input type="password" class="form-control" id="password" name="password" formControlName="password">
+          <div *ngIf="form.controls.password.invalid">
+            <span class="text-danger" *ngIf="form.controls.password.errors.required && form.controls.password.touched"> Le Password est obligatoire</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class='text-center'>
+          <div class="btn-group">
+            <button type="submit" name="btnValide" class="btn btn-primary center-block">Créer</button>
+            <button type="button" id="btnAnnuler" name="btnAnnuler" class="btn btn-info center-block">
+              Annuler
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+

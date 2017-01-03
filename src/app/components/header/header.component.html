@@ -1,0 +1,43 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a [routerLink]="['/Immobilier']" class="navbar-brand" >Site Immobilier</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown" appDropdown>
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Catégories<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a [routerLink]="['/Immobilier','Appartement']">Appartements <span class="badge">2</span></a></li>
+            <li><a [routerLink]="['/Immobilier','Villa']">Maisons et Villas <span class="badge">1</span></a></li>
+            <li><a [routerLink]="['/Immobilier','Bureau']">Bureaux et Plateaux <span class="badge">3</span></a></li>
+            <li role="separator" class="divider"></li>
+            <li><a [routerLink]="['/Immobilier','Comerce']">Magasins et Locaux <span class="badge">4</span></a></li>
+            <li role="separator" class="divider"></li>
+            <li><a [routerLink]="['/Immobilier','Autre']">Autre immobiliers <span class="badge">2</span></a></li>
+          </ul>
+        </li>
+        <li><a [routerLink]="['/Authenticate']">Inscription</a></li>
+        <li><a [routerLink]="['/Login']">Connexion</a></li>
+        <li><div>{{searchStr}}</div></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <form class="navbar-form navbar-left">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Rechercher" (input)="search($event.target.value)" >
+          </div>
+          <button type="submit" class="btn btn-default" >Rechercher</button>
+        </form>
+        <li class="dropdown" appDropdown  >
+          <a href="#" class="dropdown"  role="button" aria-haspopup="true" aria-expanded="false" appDropdown *ngIf="logged()">
+            <a class="glyphicon glyphicon-user"> </a> username<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Mon compte</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a style="cursor: pointer;" (click)="disconnect()" >Deconnecter</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

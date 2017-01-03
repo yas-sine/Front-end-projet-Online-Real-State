@@ -1,0 +1,31 @@
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a [routerLink]="['/Immobilier']">Accueil</a></li>
+    <li>{{selectedImmobilier?.titre}}</li>
+  </ol>
+</div>
+<div class="row">
+  <div class="col-md-5">
+    <app-list (immobilierSelected)="selectedImmobilier = $event" ></app-list>
+  </div>
+  <div class="col-md-5">
+    <app-detail [selectedImmobilier]="selectedImmobilier"></app-detail>
+  </div>
+  <div class="col-md-2">
+    <div class="list-group">
+      <a href="#" class="list-group-item active"><a class="glyphicon glyphicon-cog"> </a> Gerer compte</a>
+      <a href="#" class="list-group-item list-group-item-action">Mon Compte</a>
+      <a href="#" class="list-group-item list-group-item-action" [routerLink]="['/Login']">Se connecter</a>
+      <a href="#" class="list-group-item list-group-item-action">Se deconnecter</a>
+    </div>
+    <br />
+    <div class="list-group">
+      <a href="#" class="list-group-item list-group-item-action list-group-item-info"><a
+        class="glyphicon glyphicon-share"> </a> Partager</a>
+      <a href="#" class="list-group-item list-group-item-action list-group-item-warning"><a
+        class="glyphicon glyphicon-heart"> </a> Enregistrer</a>
+      <a href="#" class="list-group-item list-group-item-action list-group-item-danger"><a
+        class="glyphicon glyphicon-warning-sign"> </a> Signaler</a>
+    </div>
+  </div>
+</div>
