@@ -37,13 +37,13 @@ export class CompteService {
   Login(user:string, password:string) {
     this.isLoggedIn = false;
     if (user && password) {
-      var creds = "nom=" + user + "&password=" + password;
+      var creds = "email=" + user + "&password=" + password;
       var headers = new Headers();
       headers.append('Content-Type', 'application/x-www-form-urlencoded');
       return this.http.post(this.UrlWebApi + '/api/authenticate', creds, {headers: headers})
         .map(res => res.json());
 
-  
+
 
 
     }

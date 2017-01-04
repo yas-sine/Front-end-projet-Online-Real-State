@@ -16,6 +16,8 @@ import { ListComponent } from './components/immobilier/list.component';
 import {CompteService} from "./services/compte.service";
 import { LoginComponent } from './components/utilisateurs/login.component';
 import { CreerComponent } from './components/utilisateurs/creer.component';
+import {Globals} from "./components/utilisateurs/globals";
+
 
 @NgModule({
   declarations: [
@@ -37,7 +39,7 @@ import { CreerComponent } from './components/utilisateurs/creer.component';
     ReactiveFormsModule,
     routing
   ],
-  providers: [ImmobiliersService, CompteService],
+  providers: [ImmobiliersService, CompteService, Globals],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,29 +1,27 @@
 import {Component, OnInit} from '@angular/core';
 import {CompteService} from "../../services/compte.service";
+import {Globals} from '../utilisateurs/globals';
+
+
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html'
 })
 
-
-
 export class HeaderComponent implements OnInit {
-  username: string = '';
 
-
-
-  constructor(private compteservice:CompteService ) {
+  constructor(private compteservice:CompteService, private globals:Globals) {
   }
   search(searchText:string){
     console.log(searchText);
 }
 
-
   logged() {
      return this.compteservice.isLoggedIn;
 
-    }
+
+        }
 
   disconnect() {
     //window.localStorage.removeItem(LOCAL_TOKEN_KEY);
@@ -32,7 +30,6 @@ export class HeaderComponent implements OnInit {
 
 
   ngOnInit() {
-
   }
 
   }

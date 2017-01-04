@@ -7,11 +7,7 @@ import {CreerComponent} from "./components/utilisateurs/creer.component";
 import {LoginComponent} from "./components/utilisateurs/login.component";
 
 
-
-
-
 const APP_ROUTES : Routes = [
-
 
   {path: 'Detail', component: DetailComponent},
   {path: 'Immobilier', component: ImmobilierComponent},
