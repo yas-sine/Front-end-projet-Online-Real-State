@@ -5,6 +5,7 @@ import {DetailComponent} from "./components/immobilier/detail.component";
 import {PlusdetailComponent} from "./components/immobilier/plusdetail.component";
 import {CreerComponent} from "./components/utilisateurs/creer.component";
 import {LoginComponent} from "./components/utilisateurs/login.component";
+import {CompteUserComponent} from "./components/utilisateurs/compte-user.component";
 
 
 const APP_ROUTES : Routes = [
@@ -15,6 +16,9 @@ const APP_ROUTES : Routes = [
   {path: 'PlusDetail/:Id', component: PlusdetailComponent},
   {path: 'Authenticate', component: CreerComponent},
   {path: 'Login', component: LoginComponent},
+  {path: 'MonCompte', component: CompteUserComponent},
+
+
   {path: '', component: ImmobilierComponent}
 ];
 export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);

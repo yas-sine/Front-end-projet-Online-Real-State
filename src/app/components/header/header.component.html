@@ -19,6 +19,7 @@
         </li>
         <li><a [routerLink]="['/Authenticate']">Inscription</a></li>
         <li><a [routerLink]="['/Login']">Connexion</a></li>
+        <li><a [routerLink]="['/MonCompte']">Mon compte</a></li>
         <li><div ></div></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -29,7 +30,9 @@
           <button type="submit" class="btn btn-default" >Rechercher</button>
         </form>
         <li class="dropdown" appDropdown  *ngIf="logged()">
-          <a class="dropdown"  role="button" aria-haspopup="true" aria-expanded="false" appDropdown><div>{{globals.nom}}</div> <span class="caret"></span></a>
+          <a class="dropdown"  role="button" aria-haspopup="true" aria-expanded="false" appDropdown><div>{{globals.nom}}</div>
+            <span class="caret"></span>
+          </a>
           <ul class="dropdown-menu">
             <li><a href="#">Mon compte</a></li>
             <li role="separator" class="divider"></li>

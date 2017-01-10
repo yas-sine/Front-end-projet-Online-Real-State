@@ -17,6 +17,7 @@ import {CompteService} from "./services/compte.service";
 import { LoginComponent } from './components/utilisateurs/login.component';
 import { CreerComponent } from './components/utilisateurs/creer.component';
 import {Globals} from "./components/utilisateurs/globals";
+import { CompteUserComponent } from './components/utilisateurs/compte-user.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import {Globals} from "./components/utilisateurs/globals";
     ItemComponent,
     ListComponent,
     LoginComponent,
-    CreerComponent
+    CreerComponent,
+    CompteUserComponent
   ],
   imports: [
     BrowserModule,

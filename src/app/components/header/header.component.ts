@@ -14,20 +14,17 @@ export class HeaderComponent implements OnInit {
   constructor(private compteservice:CompteService, private globals:Globals) {
   }
   search(searchText:string){
-    console.log(searchText);
-}
+     console.log(searchText);
+ }
 
   logged() {
      return this.compteservice.isLoggedIn;
-
-
         }
 
   disconnect() {
     //window.localStorage.removeItem(LOCAL_TOKEN_KEY);
    this.compteservice.isLoggedIn = false;
   }
-
 
   ngOnInit() {
   }

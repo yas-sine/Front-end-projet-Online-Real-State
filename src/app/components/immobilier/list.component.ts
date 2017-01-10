@@ -10,11 +10,14 @@ import {ImmobiliersService} from "../../services/immobiliers.service";
 export class ListComponent implements OnInit {
   immobiliers:Immobilier[] = [];
 
-  
+  search(searchText:string){
+    console.log(searchText);
+  }
+
+
 
 
   @Output() immobilierSelected = new EventEmitter<Immobilier>();
-
   constructor(private route:ActivatedRoute, private immobiliersservice:ImmobiliersService) {
   }
 
@@ -31,6 +34,7 @@ export class ListComponent implements OnInit {
         this.immobiliersservice.RecupererImmobiliers().subscribe(p => {
           this.immobiliers = p; }, err => {
           console.log(err);
+
 
         });
       }

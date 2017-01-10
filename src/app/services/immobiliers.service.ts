@@ -25,18 +25,6 @@ export class ImmobiliersService implements OnInit {
       .map(response => response.json());
     return immobiliers;
   }
-  ChercherParId(id:string):Observable<Immobilier> {
-
-    return this.http .get((this.UrlWebApi + '/api/immobiliers/'+id),
-      {headers: this.getHeaders()})
-      .map(response => response.json());
-  }
-
-
-
-
-
-
 
   ChercherParCategorie(Categorie:string):Observable<Immobilier[]>
   { return this.http .get((this.UrlWebApi + '/api/immobilier/'+Categorie),

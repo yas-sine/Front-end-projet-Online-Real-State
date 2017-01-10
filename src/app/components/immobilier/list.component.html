@@ -3,8 +3,10 @@
   <div class="col-md-8 col-md-offset-1 col-lg-12 col-lg-offset-0">
     <ul class="list-group">
       <div >
-        <li><app-item *ngFor="let immobilier of immobiliers" [immobilier]="immobilier" (click)="onSelected(immobilier)" ></app-item></li>
+        <li><app-item *ngFor="let immobilier of immobiliers"
+                      [immobilier]="immobilier" (click)="onSelected(immobilier)" ></app-item></li>
       </div>
     </ul>
   </div>
 </div>
+
