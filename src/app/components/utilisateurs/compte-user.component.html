@@ -1,0 +1,41 @@
+
+<div>
+  <label for="titre">Titre</label>
+  <input type="text" id="titre" #titre>
+</div>
+
+
+<div>
+  <label for="categorie">Categorie</label>
+  <input type="text" id="categorie" #categorie>
+</div>
+
+<div>
+  <label for="price">Prix</label>
+  <input type="text" id="price" #price>
+</div>
+
+<div>
+  <label for="description">Description</label>
+  <input type="text" id="description" #description>
+</div>
+
+
+
+<div>
+  <label for="datedepos">date depos</label>
+  <input type="text" id="datedepos" #datedepos>
+</div>
+
+
+<div>
+  <label for="imagePath">ImagePath</label>
+  <input type="text" id="imagePath" #imagePath>
+</div>
+
+
+
+<div>
+  <button (click)="onSubmit(titre.value, categorie.value, description.value, price.value, datedepos.value, imagePath.value)">Submit</button>
+</div>
+

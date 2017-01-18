@@ -1,4 +1,4 @@
-import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Immobilier} from "../../models/immobilier";
 import {ImmobiliersService} from "../../services/immobiliers.service";
@@ -9,14 +9,7 @@ import {ImmobiliersService} from "../../services/immobiliers.service";
 })
 export class ListComponent implements OnInit {
   immobiliers:Immobilier[] = [];
-
-  search(searchText:string){
-    console.log(searchText);
-  }
-
-
-
-
+  
   @Output() immobilierSelected = new EventEmitter<Immobilier>();
   constructor(private route:ActivatedRoute, private immobiliersservice:ImmobiliersService) {
   }
@@ -34,7 +27,6 @@ export class ListComponent implements OnInit {
         this.immobiliersservice.RecupererImmobiliers().subscribe(p => {
           this.immobiliers = p; }, err => {
           console.log(err);
-
 
         });
       }
